@@ -53,46 +53,48 @@ int main() {
 	printf("입력된 두번째 벡터: ");
 	printVector(v2);
 
-	int choice;
-	printf("\n다음 중 하나를 선택하세요:\n");
-	printf("1. 벡터의 합\n");
-	printf("2. 벡터의 차\n");
-	printf("3. 벡터의 외적\n");
-	printf("4. 벡터의 내적\n");
-	printf("5. 종료\n");
-	printf("명령 입력 : ");
-	scanf_s("%d", &choice);
+	while (1) {
+		int choice;
+		printf("\n다음 중 하나를 선택하세요:\n");
+		printf("1. 벡터의 합\n");
+		printf("2. 벡터의 차\n");
+		printf("3. 벡터의 외적\n");
+		printf("4. 벡터의 내적\n");
+		printf("5. 종료\n");
+		printf("명령 입력 : ");
+		scanf_s("%d", &choice);
 
-	switch (choice) {
-	case 1: {
-		struct Vector vAdd = addVectors(v1, v2);
-		printf("\n벡터의 합은 ");
-		printVector(vAdd);
-		break;
-	}
-	case 2: {
-		struct Vector vSub = subVectors(v1, v2);
-		printf("\n벡터의 차는 ");
-		printVector(vSub);
-		break;
-	}
-	case 3: {
-		struct Vector vCross = crossProduct(v1, v2);
-		printf("\n벡터의 외적은 ");
-		printVector(vCross);
-		break;
-	}
-	case 4: {
-		float vDot = dotProduct(v1, v2);
-		printf("\n벡터의 내적은 vec1 * vec2=%.2f\n", vDot);
-		break;
-	}
-	case 5: {
-		exit(0);
-	}
-	default:
-		printf("\n잘못된 입력입니다.\n");
-		break;
+		switch (choice) {
+		case 1: {
+			struct Vector vAdd = addVectors(v1, v2);
+			printf("\n벡터의 합은 ");
+			printVector(vAdd);
+			break;
+		}
+		case 2: {
+			struct Vector vSub = subVectors(v1, v2);
+			printf("\n벡터의 차는 ");
+			printVector(vSub);
+			break;
+		}
+		case 3: {
+			struct Vector vCross = crossProduct(v1, v2);
+			printf("\n벡터의 외적은 ");
+			printVector(vCross);
+			break;
+		}
+		case 4: {
+			float vDot = dotProduct(v1, v2);
+			printf("\n벡터의 내적은 vec1 * vec2=%.2f\n", vDot);
+			break;
+		}
+		case 5: {
+			exit(0);
+		}
+		default:
+			printf("\n잘못된 입력입니다.\n");
+			break;
+		}
 	}
 
 	return 0;
